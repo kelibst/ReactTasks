@@ -42,3 +42,15 @@
 .read-the-docs {
   color: #888;
 }
+
+.main_view {
+  display: flex;
+}
+
+.staff_list {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: white;
+  color: #444;
+}

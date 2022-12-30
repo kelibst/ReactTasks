@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@syncfusion/ej2-react-navigations": "^20.4.40",
     "@syncfusion/ej2-react-schedule": "^20.4.40",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
