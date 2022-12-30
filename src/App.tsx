@@ -1,32 +1,50 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+import { Inject, ScheduleComponent, Day, Week, WorkWeek, Month, Agenda, DragAndDrop,Resize} from '@syncfusion/ej2-react-schedule'
+
+const localData = {
+  dataSource: [
+    {
+    Id:1,
+    StartTime: new Date(2022, 11, 30, 6, 0),
+    EndTime: new Date(2022, 11, 30, 8, 0),
+    Subject: "Blocked",
+    IsBlock: true,
+    
+    },
+    {
+    Id:2,
+    EndTime: new Date(2022, 11, 30, 9, 0),
+    StartTime: new Date(2022, 11, 30, 6, 0),
+    Subject: "Second Testing",
+    
+    IsReadOnly:true,
+    },
+    {
+    Id:3,
+    EndTime: new Date(2022, 11, 30, 10, 0),
+    StartTime: new Date(2022, 11, 30, 6, 0),
+    subject: "Testing",
+    
+    },
+    {
+    Id:4,
+    EndTime: new Date(2022, 11, 30, 12, 0),
+    StartTime: new Date(2022, 11, 30, 6, 0),
+    Subject: "Testing",
+    }
+  ],
+}
+console.log(localData)
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <ScheduleComponent
+      eventSettings={localData}>
+        <Inject services={[Day, Week, WorkWeek, Month, Agenda, DragAndDrop, Resize]} />
+      </ScheduleComponent>
     </div>
   )
 }
